@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDT 11기</title>
+    <style>
+        img {width: 200px;}
+    </style>
+</head>
+<body>
+    <!-- div태그: block element 한줄의 영역을 차지 -->
+    <div>Hello World!!!</div>
+    <!-- h1~h6 제목태그 -->
+    <div>안녕하세요</div>
+    <h1>heading 1</h1>
+    <h2>heading 2</h2>
+    <h3>heading 3</h3>
+    <h4>heading 4</h4>
+    <h5>heading 5</h5>
+    <h6>heading 6</h6>
+    <!-- p태그: 문장 -->
+    <p>안녕하세요 <br> 저는 지현우입니다.</p>
+    <!-- br태그: 줄바꿈 -->
+    <!-- hr태그: 한줄 그어줌 -->
+    <hr>
+    <!-- ul태그: 순서없는 목록 
+    ul태그속성(마커모양): disc, circle, square, none -->
+    
+    <!-- li태그: ul이나 ol태그 안에 list를 작성  -->
+    <ul type="circle">
+        <li>사과</li>
+        <li>바나나</li>
+        <li>파인애플</li>
+    </ul>
+    <!-- ol태그: 순서있는 목록:
+    ol태그속성(순번모양): 1, A, a, I, i
+    start: 시작번호
+    reversed: 역순으로-->
+    <ol type="1" start="10">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    <ul type="square">
+        <li>
+            <ol>
+                <li><b>일</b></li>
+                <li><strong>이</strong></li>
+                <li><i>삼</i></li>
+            </ol>
+        </li>
+        <li>
+            <ol>
+                <li><em>일</em></li>
+                <li><del>이</del></li>
+                <li><u>삼</u></li>
+            </ol>
+        </li>
+    </ul>
+    <!-- img태그: 이미지 등록 -->
+    <img src="https://ssl.pstatic.net/melona/libs/1474/1474337/5e23a9d4a3d1fe155e8a_20231226163345810.jpg" alt="">
+
+    <!-- a태그: 페이지를 이동 
+    inline태그: block과 반대로 영역이 없음-->
+    <div>
+        <a href="/exam1.html" target="_blank">이동</a>
+        <a href="/exam1.html" target="_blank">이동</a>
+        <a href="/exam1.html" target="_blank">이동</a>
+    </div>
+    <div>
+        <div><span>안녕하세요</span></div>
+        <span style="color: red">안녕하세요</span>
+    </div>
+    <!-- form태그: input태그를 담는 역할,
+        서버로부터 input의 데이트(value)를 전송시키는 역할
+    -->
+    <!-- placeholder속성: 사용자에게 안내해주는 역할 -->
+    <form>
+        <input type="button" value="전송" />
+        <button type="submit">버튼</button><br>
+        <input type="text" placeholder="이름을 입력해주세요" value="hi" readonly/><br>
+        <input type="password" placeholder="비밀번호 입력해주세요"/><br>
+        <input type="checkbox" name="food" value="피자">피자
+        <input type="checkbox" name="food" value="chicken" checked>치킨
+        <input type="radio" name="hobby" value="football"> 풋살
+        <input type="radio" name="hobby" value="watchingyoutube"> 유튜브 보기
+        <input type="radio" name="hobby" value="eatfood" disabled> 혼밥
+        <input type="date"><br>
+        <input type="time"><br>
+        <input type="datetime-local"><br>
+        <select name="" id="">
+            <optgroup label="Asia">
+                <option>대한민국</option>
+                <option>일본</option>
+                <option>중국</option>
+            </optgroup>
+            <optgroup label="America">
+                <option>미국</option>
+                <option>캐나다</option>
+            </optgroup>
+        </select>
+    </form>
+</body>
+</html>
