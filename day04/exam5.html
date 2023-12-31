@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .orange {width: auto; height: 200px; background-color: orange;}
+        .orange div {display: inline-block; width: 200px; height: 100px;}
+        .skyblue {background-color: skyblue;}
+        .green {background-color: green;}
+        .red {background-color: red;}
+        .orange div.skyblue ~ div {margin-left: 30px;}
+    </style>
+</head>
+<body>
+    <div class="orange">
+        <div class="skyblue">HTML</div>
+        <div class="green">CSS</div>
+        <div class="red">javascript</div>
+    </div>
+</body>
+</html>
