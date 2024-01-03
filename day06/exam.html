@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {position: relative; width: 500px; height: 500px; background-color: grey;}
+        .container div {width: 100px; height: 100px;}
+        .itme1 {position: absolute; background-color: red; z-index: 10;}
+        .itme2 {position: absolute; top: 30px; left: 30px; background-color: blue; z-index: 8;}
+        .itme3 {position: absolute; top: 60px; left: 60px; background-color: green; z-index: 9;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="itme1"></div>
+        <div class="itme2"></div>
+        <div class="itme3"></div>
+    </div>
+</body>
+</html>
