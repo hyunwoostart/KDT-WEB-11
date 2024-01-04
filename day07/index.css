@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+img {
+    width: 300px;
+    height: 300px;
+    transform: rotate3d(1, 1, 1, 30deg) rotateX(36deg) scale3d(1.5, 1.5, 1.5);
+    position: relative;
+}
+div:nth-child(1) img {z-index: 5;}
+div:nth-child(2) img {z-index: 4;}
+div:nth-child(3) img {z-index: 3;}
+
+
+
