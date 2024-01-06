@@ -52,53 +52,51 @@ if(age >= 20) {
 }else if(age >= 14) {
     console.log('중학생입니다');
 }else if(age >= 8) {
-    console.log('초등학생입니다')
+    console.log('초등학생입니다');
 }else {
-    console.log('유아입니다.')
+    console.log('유아입니다.');
 }
 */
-
 /* ======================================== */
 
 //실습 5. if문
 // 실습 4에 이어 prompt를 이용해 성별 추가로 받기
 // Age와 성별에 따라 “초등 여학생”, “중등 남학생”, “성인 남자“ 등등 출력하기
-/*
-let age = prompt("몇살이세요?");
-let gender = prompt("성별이 어떻게 되세요?")
+
+let age = Number(prompt("몇살이세요?"));
+let gender = prompt("성별이 어떻게 되세요?");
 
 if(age >= 20) {
     if(gender === "남자") {
-        console.log("성인 남자")
+        console.log("성인 남자");
     }else {
         console.log("성인 여자");
     }
 }else if(age >= 17) {
     if(gender === "남자") {
-        console.log("고등학생 남자")
+        console.log("고등학생 남자");
     }else {
         console.log("고등학생 여자");
     }
 }else if(age >= 14) {
     if(gender === "남자") {
-        console.log("중학생 남자")
+        console.log("중학생 남자");
     }else {
         console.log("중학생 여자");
     }
 }else if(age >= 8) {
     if(gender === "남자") {
-        console.log("초등학생 남자")
+        console.log("초등학생 남자");
     }else {
         console.log("초등학생 여자");
     }
 }else {
     if(gender === "남자") {
-        console.log("남자 유아")
+        console.log("남자 유아");
     }else {
         console.log("여자 유아");
     }
 }
-*/
 
 /* ======================================== */
 
@@ -109,9 +107,10 @@ now < 12 ? console.log("오전입니다") : console.log("오후입니다");
 /* ======================================== */
 
 //실습 7.
-for(idx = 13; idx < 1000; idx++) {
-    console.log((2*idx)+1);
-} 
+let result =  Number(prompt("숫자를 입력하세요"))
+for(let i = 0; i < 10; i++) {
+    console.log (i % 13 === 0 && i % 2 !== 0);
+}
 
 /* ======================================== */
 
@@ -121,7 +120,7 @@ for(idx = 13; idx < 1000; idx++) {
 /*
 for(let a = 2; a < 10; a++) {
     for(let b = 1; b < 10; b++){
-        let c = a * b
+        let c = a * b;
         console.log(`${a} x ${b} = ${c}`);
         b === 9 ? console.log(`---${a}단---`) : '';
     }
@@ -131,13 +130,84 @@ for(let a = 2; a < 10; a++) {
 //실습 9.
 // 정수 n이 있을때 2 또는 3의 배수의 총합을 구하시오.
 // 단, n은 0 < n <100
-let mulNum = 0;
-
-for(let i = 0; i < 100; i++) {
-    if(i % 2 == 0) {
-        continue;
+// while문
+let sum = 0;
+let i = 0;
+while(i < 100) {
+    if(i % 2 == 0  || i % 3 == 0) {
+        sum += i;
     }
-    mulNum += i;
+    i++
 }
 
-console.log(mulNum);
+console.log(sum);
+
+// for문
+let sum2 = 0;
+
+for(let i = 0; i < 100; i++) {
+    if(i % 2 == 0 || i % 3 == 0) {
+        sum2 += i;
+    }
+}
+
+console.log(sum2);
+
+/*
+//풀이 - 실습9
+let num = 100;
+let sum = 0;
+for(let i =0; i < num; i++) {
+    if( i % 2 !== 0 && i % 3 !== 0){
+        continue
+    }
+    sum += i;
+}
+console.log(sum);
+*/
+
+
+// ================================================= //
+
+//while문
+
+// 1번 타입, 조건문을 사용
+// let index = 0;
+
+// while (index < 10) {
+//     console.log("인사를 ", index + 1, "번째 드립니다!");
+//     index++;
+// }
+
+// 2번 타입, 조건문을 사용하지 않고 if 문 + break 사용
+// let index2 = 0;
+
+// while (true) {
+//     console.log("절을 ", index2 + 1, "번째 드립니다!");
+//     index2++;
+//     if (index2 == 10) {
+//         break;
+//     }
+// }
+
+// break
+for(let i = 0; i < 100; i++) {
+    if(i==10) {
+        console.log("멈춰!");
+        break;
+    }
+    console.log(i);
+}
+
+// continue
+// let sum = 0;
+
+// for(let i = 0; i < 100; i++) {
+//     if(i%2 == 0) {
+//         continue;
+//     }
+//     sum += i;
+// }
+
+// console.log(sum);
+
