@@ -28,18 +28,19 @@
 const fruits1 = ['사과', '복숭아', '딸기', '바나나', '키위'];
 const fruits2 = ['키위', '사과', '딸기'];
 
-// let same = fruits1.filter((fruit) => {
-//     return fruits2.includes(fruit);
-// })
-// let diff = fruits1.filter((fruit) => {
-//     return !fruits2.includes(fruit);
-// })
+let same = fruits1.filter((fruit) => {
+    return fruits2.includes(fruit);
+})
+let diff = fruits1.filter((fruit) => {
+    return !fruits2.includes(fruit);
+})
 
-// console.log(same);
-// console.log(diff);
+console.log(same);
+console.log(diff);
 
 
 // for of 문으로 작성
+/*
 const same = [];
 const diff = [];
 
@@ -48,3 +49,4 @@ for (let fruit of fruits1) {
 }
 console.log(same);
 console.log(diff);
+*/

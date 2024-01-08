@@ -14,21 +14,41 @@
     <label for="operate">연산자:<input type="text" id="operate"></label>
     <label for="result">결과: <input type="text" id="result"></label>
     <button onclick="calc()">계산하기</button>
-    <button onclick="btnReset()">초기화</button>
+    <button onclick="reset()">초기화</button>
+    
     <script>
-        const btnReset = () => {
-            document.getElementById('num1').value = '';
-            document.getElementById('num2').value = '';
-            document.getElementById('operate').value = '';
-            document.getElementById('result').value = '';
-        }
-
         // 힌트 1) id 속성이 "value1"인 input값 가져와 변수에 넣기
         // 변수 = document.getElementById('value1').value;
 
         // 힌드 2) id 속성이 "value1"인 input 에 값 넣기
         // document.getElementById('value1').value = 값;
+        const calc = () => {
+            let num1 = parseFloat(document.querySelector('#num1').value);
+            let num2 = parseFloat(document.querySelector('#num2').value);
+            let operate = document.querySelector('#operate').value;
+            let result = document.getElementById("result");
+            
+            let nums;
+            if(operate == "+") {
+                nums = num1 + num2;
+            } else if (operate == "-") {
+                nums = num1 - num2;
+            } else if (operate == "*") {
+                nums = num1 * num2;
+            } else if (operate == "/") {
+                nums = num1 / num2;
+            } else {
+                document.getElementById('result').value = "계산할수없습니다";
+            }
+            result.value = nums;
+        }
 
+        const reset = () => {
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';
+            document.getElementById('operate').value = '';
+            document.getElementById('result').value = '';
+        }
     </script>
 </body>
 </html>

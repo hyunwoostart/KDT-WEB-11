@@ -14,16 +14,9 @@
     <label for="operate">연산자: <input type="text" id="operate"></label>
     <label for="result">결과: <input type="text" id="result" readonly></label>
     <button onclick="calc()">계산하기</button>
-    <button onclick="btnReset()">초기화</button>
+    <button onclick="reset()">초기화</button>
 
     <script>
-        const btnReset = () => {
-            document.getElementById("num1").value = '';
-            document.getElementById("num2").value = '';
-            document.getElementById("operate").value = '';
-            document.getElementById("result").value = '';
-        }
-
         const calc = () => {
             let num1 = parseFloat(document.getElementById("num1").value);
             let num2 = parseFloat(document.getElementById("num2").value);
@@ -44,10 +37,17 @@
                     result = num1 / num2;
                     break;
                 default:
-                    result = 'Invalid operator';
+                    result = '모르겟어요';
             }
 
             document.getElementById("result").value = result;
+        }
+
+        const reset = () => {
+            document.getElementById("num1").value = '';
+            document.getElementById("num2").value = '';
+            document.getElementById("operate").value = '';
+            document.getElementById("result");
         }
     </script>
 </body>

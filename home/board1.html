@@ -10,22 +10,22 @@
     </style>
 </head>
 <body>
-    <div>방명록입니다.</div>
-    <label for="who">작성자<input type="text" id="who"></label>
+    <p>방명록입니다.</p>
 
+    <label for="who">작성자<input type="text" id="who"></label>
     <label for="cnt">내용<input type="text" id="cnt"></label>
     <button onclick="writeCnt()">작성</button>
 
-
     <table>
-        <tbody>
+        <thead>
             <tr>  
                 <th>번호</th>
                 <th>작성자</th>
                 <th>내용</th>
                 <th>작성일</th>
             </tr>
-        </tbody>
+        </thead>
+        <tbody></tbody>
     </table>
 
     <script>
