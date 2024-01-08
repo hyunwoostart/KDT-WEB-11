@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록 만들기</title>
+    <style>
+        input {display: block;}
+        table, tbody, tr, th, td {border-collapse: collapse; border: 1px solid #000;}
+    </style>
+</head>
+<body>
+    <div>방명록입니다.</div>
+    <label for="who">작성자<input type="text" id="who"></label>
+    <label for="cnt">내용<input type="text" id="cnt"></label>
+    <button onclick="writeCnt()">작성</button>
+
+    <table>
+        <tbody id="tableBody">
+            <tr>
+                <th>번호</th>
+                <th>작성자</th>
+                <th>내용</th>
+                <th>작성일</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const writeCnt = () => {
+            // 입력된 작성자, 내용 가져오기
+            const who = document.getElementById('who').value;
+            const cnt = document.getElementById('cnt').value;
+
+            // 현재 날짜 및 시간 가져오기
+            const currentDate = new Date();
+            const dateString = currentDate.toLocaleDateString() + ' ' + currentDate.toLocaleTimeString();
+
+            // 테이블의 tbody 가져오기
+            const tableBody = document.getElementById('tableBody');
+
+            // 새로운 행(tr) 생성
+            const newRow = document.createElement('tr');
+
+            // 번호(td) 열 추가
+            const numberCell = document.createElement('td');
+            numberCell.textContent = tableBody.children.length + 1;
+            newRow.appendChild(numberCell);
+
+            // 작성자(td) 열 추가
+            const whoCell = document.createElement('td');
+            whoCell.textContent = who;
+            newRow.appendChild(whoCell);
+
+            // 내용(td) 열 추가
+            const cntCell = document.createElement('td');
+            cntCell.textContent = cnt;
+            newRow.appendChild(cntCell);
+
+            // 작성일(td) 열 추가
+            const dateCell = document.createElement('td');
+            dateCell.textContent = dateString;
+            newRow.appendChild(dateCell);
+
+            // 행을 테이블에 추가
+            tableBody.appendChild(newRow);
+
+            // 입력 필드 초기화
+            document.getElementById('who').value = '';
+            document.getElementById('cnt').value = '';
+        }
+    </script>
+</body>
+</html>

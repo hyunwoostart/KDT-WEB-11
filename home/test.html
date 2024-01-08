@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 1. 간단 계산기 만들기</title>
+    <style>
+        label {display: block; margin-bottom: 5px;}
+    </style>
+</head>
+<body>
+    <label for="num1">값1:<input type="text" id="num1"></label>
+    <label for="num2">값2: <input type="text" id="num2"></label>
+    <label for="operate">연산자:<input type="text" id="operate"></label>
+    <label for="result">결과: <input type="text" id="result"></label>
+    <button onclick="calc()">계산하기</button>
+    <button onclick="btnReset()">초기화</button>
+    <script>
+        const btnReset = () => {
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';
+            document.getElementById('operate').value = '';
+            document.getElementById('result').value = '';
+        }
+
+        // 힌트 1) id 속성이 "value1"인 input값 가져와 변수에 넣기
+        // 변수 = document.getElementById('value1').value;
+
+        // 힌드 2) id 속성이 "value1"인 input 에 값 넣기
+        // document.getElementById('value1').value = 값;
+
+    </script>
+</body>
+</html>

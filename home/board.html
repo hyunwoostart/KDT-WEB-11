@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록 만들기</title>
+    <style>
+        input {display: block;}
+        table, tbody, tr, th, td {border-collapse: collapse; border: 1px solid #000;}
+    </style>
+</head>
+<body>
+    <div>방명록입니다.</div>
+    <label for="who">작성자<input type="text" id="who"></label>
+
+    <label for="cnt">내용<input type="text" id="cnt"></label>
+    <button onclick="writeCnt()">작성</button>
+
+
+    <table>
+        <tbody>
+            <tr>  
+                <th>번호</th>
+                <th>작성자</th>
+                <th>내용</th>
+                <th>작성일</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const writeCnt = () => {
+            document.getElementById('who').value;
+            document.getElementById('cnt').value;
+
+            var newDiv = document.createElement("tr");
+            document.table.appendChild(newDiv);
+
+            console.log('되고잇는건가...');
+        }
+    </script>
+</body>
+</html>
