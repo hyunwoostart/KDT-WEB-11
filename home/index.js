@@ -154,3 +154,68 @@ for (let i = 0; i < num; i++) {
 }
 console.log(sum);
 */
+
+// 실습1
+// 1 ~ 100까지의 배열을 for문을 사용해서 만들기!
+// 그리고 해당 배열의 합을 for, for of, for Each 문으로 사용해서 구하기
+
+let array = []
+let sum1 = 0;
+let sum2 = 0;
+let sum3 = 0;
+
+// for 문
+for(let i = 0; i < 100; i++) {
+    array.push(i+1);
+    sum1 += array[i];
+}
+
+// for of 문
+for (let arr of array) {
+    sum2 += arr;
+}
+
+// forEach 문
+array.forEach((arr) => {
+    sum3 += arr;
+});
+
+console.log(sum1, sum2, sum3);
+console.log(array);
+
+// 실습2
+// let fruits1 = ["사과", "딸기", "파인애플", "수박", "참외", "오렌지", "자두", "망고"];
+// let fruits2 = ["수박", "사과", "참외", "오렌지","파인애플", "망고"];
+
+// 방법1
+/*
+let same = [];
+let diff = [];
+
+fruits1.forEach((fruits) => {
+    if(fruits2.includes(fruits)) {
+        same.push(fruits);
+    }
+});
+
+fruits1.forEach((fruits) => {
+    if(!fruits2.includes(fruits)) {
+        diff.push(fruits);
+    }
+})
+
+console.log(same);
+console.log(diff);
+*/
+
+// 방법2
+/*
+let fruits1 = ["사과", "딸기", "파인애플", "수박", "참외", "오렌지", "자두", "망고"];
+let fruits2 = ["수박", "사과", "참외", "오렌지","파인애플", "망고"];
+
+let same = fruits1.filter((fruits) => fruits2.includes(fruits));
+let diff = fruits2.filter( fruits => !fruits1.includes(fruits));
+
+console.log(same);
+console.log(diff);
+*/
