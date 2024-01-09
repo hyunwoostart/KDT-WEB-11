@@ -9,18 +9,18 @@
     </style>
 </head>
 <body>
-    <p>계산기</p>
-    <label for="num1">값1<input type="number" id="num1"></label>
-    <label for="num2">값2<input type="number" id="num2"></label>
-    <label for="operate">연산자<input type="text" id="operate"></label>
-    <label for="result">결과<input type="text" id="result"></label>
+    <h3>계산기</h3>
+    <label for="">값1<input type="number" id="num1"></label>
+    <label for="">값2<input type="number" id="num2"></label>
+    <label for="">연산자<input type="text" id="operate"></label>
+    <label for="">결과<input type="text" id="result"></label>
     <button onclick="calc()">계산하기</button>
     <button onclick="reset()">초기화</button>
 
     <script>
         const calc = () => {
             let num1 = Number(document.querySelector('#num1').value);
-            let num2 = Number(document.querySelector('#num2').value);
+            let num2 =  Number(document.querySelector('#num2').value);
             let operate = document.querySelector('#operate').value;
             let result = document.querySelector('#result');
             let nums;
@@ -34,7 +34,7 @@
             } else if (operate == '/') {
                 nums = num1 / num2;
             } else {
-                nums = '모르겠어요'
+                nums = '모르겟어요';
             }
             result.value = nums;
         }
@@ -44,7 +44,6 @@
             document.querySelector('#num2').value = '';
             document.querySelector('#operate').value = '';
             document.querySelector('#result').value = '';
-            console.log('되고잇어?');
         }
     </script>
 </body>

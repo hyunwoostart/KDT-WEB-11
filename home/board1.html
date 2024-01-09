@@ -11,33 +11,58 @@
 </head>
 <body>
     <p>방명록입니다.</p>
+    <div>
+        <label for="username">작성자:</label>
+        <input type="text" id="username" />
+    </div>
+    <div>
+        <label for="content">내용:</label>
+        <input type="text" id="content"/>
+    </div>
+    <button type="button" onclick="tableWrite()">작성</button>
 
-    <label for="who">작성자<input type="text" id="who"></label>
-    <label for="cnt">내용<input type="text" id="cnt"></label>
-    <button onclick="writeCnt()">작성</button>
-
-    <table>
+    <table border="1" cellspacing="1" cellpadding="20">
         <thead>
-            <tr>  
-                <th>번호</th>
-                <th>작성자</th>
-                <th>내용</th>
-                <th>작성일</th>
+            <tr>
+                <td>번호</td>
+                <td>작성자</td>
+                <td>내용</td>
+                <td>작성일</td>
             </tr>
         </thead>
         <tbody></tbody>
     </table>
-
+    
     <script>
-        const writeCnt = () => {
-            document.getElementById('who').value;
-            document.getElementById('cnt').value;
+        const tableWrite = () => {
+            let userName = document.querySelector('#username').value;
+            let userCnt = document.querySelector('#content').value;
+            let tbody = document.querySelector("tbody");
+            let userDate = new Date();
 
-            var newDiv = document.createElement("tr");
-            document.table.appendChild(newDiv);
+            let year = userDate.getFullYear();
+            let month = userDate.getMonth() + 1;
+            let date = userDate.getDate();
+            let hours = String(userDate.getHours());
+            let minutes = String(userDate.getMinutes());
 
-            console.log('되고잇는건가...');
+            let newtr = document.createElement('tr');
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+            let td3 = document.createElement('td');
+            let td4 = document.createElement('td');
+
+            td1.textContent = tbody.rows.length + 1;
+            td2.textContent = userName;
+            td3.textContent = userCnt;
+            td4.textContent = `${year}-${month}-${date} ${hours}:${minutes}`;
+            
+            newtr.appendChild(td1);
+            newtr.appendChild(td2);
+            newtr.appendChild(td3);
+            newtr.appendChild(td4);
+            tbody.appendChild(newtr);
         }
-    </script>
-</body>
+        </script>
+    </body>
 </html>
