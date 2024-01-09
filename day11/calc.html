@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<body>
+    <h3>게산기 만들기</h3>
+    <label for="">값1
+        <input type="number" id="value1">
+    </label>
+    <label for="">값2
+        <input type="number" id="value2">
+    </label>
+    <label for="op">연산자
+        <input type="text" id="op" />
+    </label>
+    <input type="text" id="result">
+    <button type="button" onclick="calc()">계산하기</button>
+    <button type="button" onclick="reset()">초기화</button>
+
+    <script>
+
+        const calc = () => {
+        let num1 = Number(document.querySelector('#value1').value);
+        let num2 = Number(document.querySelector('#value2').value);
+        let operate = document.querySelector('#op').value;
+        let result =  document.querySelector('#result');
+        
+        let nums;
+            if (operate == '+') {
+                nums = num1 + num2;
+            } else if(operate == '-') {
+                nums = num1 - num2;
+            } else if( operate == '*') {
+                nums = num1 * num2;
+            } else if (operate == '/') {
+                nums = num1 / num2;
+            } else {
+                result.value = "계산할수없습니다";
+                // document.querySelector('#result').value = "계산할수없습니다";
+            }
+            result.value = nums;
+        }
+
+        const reset = () => {
+            let num1 = document.querySelector('#value1').value = '';
+            let num2 = document.querySelector('#value2').value = '';
+            let operate = document.querySelector('#op').value = '';
+            let result =  document.querySelector('#result').value = '';
+        }
+    </script>
+</body>
+</html>

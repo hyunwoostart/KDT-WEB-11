@@ -37,14 +37,14 @@
         const tableWrite = () => {
             let userName = document.querySelector('#username').value;
             let userCnt = document.querySelector('#content').value;
-            let tbody = document.querySelector("tbody");
+            let tbody = document.querySelector('tbody');
             let userDate = new Date();
 
             let year = userDate.getFullYear();
             let month = userDate.getMonth() + 1;
             let date = userDate.getDate();
-            let hours = String(userDate.getHours());
-            let minutes = String(userDate.getMinutes());
+            let hours = userDate.getHours();
+            let mins =  userDate.getMinutes();
 
             let newtr = document.createElement('tr');
             let td1 = document.createElement('td');
@@ -55,8 +55,8 @@
             td1.textContent = tbody.rows.length + 1;
             td2.textContent = userName;
             td3.textContent = userCnt;
-            td4.textContent = `${year}-${month}-${date} ${hours}:${minutes}`;
-            
+            td4.textContent = `${year} - ${month} - ${date} ${hours}:${mins} `;
+
             newtr.appendChild(td1);
             newtr.appendChild(td2);
             newtr.appendChild(td3);

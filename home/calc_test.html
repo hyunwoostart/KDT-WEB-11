@@ -22,34 +22,35 @@
 
         // 힌드 2) id 속성이 "value1"인 input 에 값 넣기
         // document.getElementById('value1').value = 값;
+        
         const calc = () => {
             let num1 = Number(document.querySelector('#num1').value);
             let num2 = Number(document.querySelector('#num2').value);
             let operate = document.querySelector('#operate').value;
-            let result = document.querySelector("#result");
-            
+            let result = document.querySelector('#result');
+
             let nums;
-            if(operate == "+") {
+            if (operate == "+") {
                 nums = num1 + num2;
             } else if (operate == "-") {
                 nums = num1 - num2;
             } else if (operate == "*") {
                 nums = num1 * num2;
-            } else if (operate == "/") {
+            }  else if (operate == "/") {
                 nums = num1 / num2;
-            } else {
-                result.value = "계산할수없습니다";
-                // document.querySelector('#result').value = "계산할수없습니다";
+            }  else {
+                nums = "모르겠어요"
             }
             result.value = nums;
         }
 
         const reset = () => {
-            document.querySelector('#num1').value = '';
-            document.querySelector('#num2').value = '';
-            document.querySelector('#operate').value = '';
-            document.querySelector('#result').value = '';
+            document.querySelector('#num1').value = "";
+            document.querySelector('#num2').value = "";
+            document.querySelector('#operate').value = "";
+            document.querySelector('#result').value = "";
         }
+
     </script>
 </body>
 </html>

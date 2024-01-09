@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>방명록 만들기</h3>
+    <form action="">
+        <label for="">작성자</label>
+        <input type="text" id="writer"><br>
+        <label for="content">내용</label>
+        <input type="text" id="content">
+        <button>작성</button>
+        
+        <table border="1" cellspacing="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>번호</td>
+                    <th>작성자</th>
+                    <th>내용</th>
+                    <th>작성일</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </form>
+    <script>
+        const writefunc = () => {
+            let writer = document.getElementById('writer').value;
+            let content = document.getElementById('content').value;
+            console.log(writer, content);
+
+            let tdNum = document.createElement('td');
+            let tdWriter = document.createElement('td');
+            let tdContent = document.createElement('td');
+            let tdDate = document.createElement('td');
+
+
+        }
+    </script>
+</body>
+</html>

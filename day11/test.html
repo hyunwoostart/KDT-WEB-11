@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="num1">값1:<input type="text" id="num1"></label>
+    <label for="num2">값2: <input type="text" id="num2"></label>
+    <label for="operate">연산자:<input type="text" id="operate"></label>
+    <label for="result">결과: <input type="text" id="result"></label>
+    <button onclick="calc()">계산하기</button>
+    <button onclick="reset()">초기화</button>
+
+    <script>
+        const calc = () => {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            let operate = document.getElementById('operate').value;
+            let result = document.getElementById('result');
+
+            let nums;
+            if (operate == "+") {
+                nums = num1 + num2;
+            } else if (operate == "-") {
+                nums = num1 - num2;
+            } else if (operate == "*") {
+                nums = num1 * num2;
+            } else if (operate == "/") {
+                nums = num1 / num2;
+            } else {
+                document.getElementById('result').value = "모르겟어요"
+            }
+            result.value = nums;
+        }
+
+        const reset = () => {
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';
+            document.getElementById('operate').value = '';
+            document.getElementById('result').value = '';
+        }
+    </script>
+</body>
+</html>

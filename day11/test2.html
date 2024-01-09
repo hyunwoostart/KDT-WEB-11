@@ -23,10 +23,10 @@
         // 힌드 2) id 속성이 "value1"인 input 에 값 넣기
         // document.getElementById('value1').value = 값;
         const calc = () => {
-            let num1 = Number(document.getElementById("num1").value);
-            let num2 = Number(document.getElementById("num2").value);
-            let operate = document.getElementById("operate").value;
-            let result;
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 =  parseFloat((document.getElementById('num2').value));
+            let operate =  document.getElementById('operate').value;
+            let result =  document.getElementById('result');
 
             switch (operate) {
                 case '+':
@@ -41,17 +41,16 @@
                 case '/':
                     result = num1 / num2;
                     break;
-                default:
-                    result = '모르겟어요';
             }
-            document.getElementById("result").value = result;
+
+            document.getElementById('result').value = result;
         }
 
         const reset = () => {
-            document.getElementById("num1").value = '';
-            document.getElementById("num2").value = '';
-            document.getElementById("operate").value = '';
-            document.getElementById("result");
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';
+            document.getElementById('operate').value = '';
+            document.getElementById('result').value = '';
         }
     </script>
 </body>
