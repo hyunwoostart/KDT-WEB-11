@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습 - 계산기</title>
+    <style>
+        label {display: block;}
+    </style>
+</head>
+<body>
+    <h3>방명록</h3>
+    <label for="">작성자<input type="text" id="writer"></label>
+    <label for="">내용<input type="text" id="content"></label>
+    <button onclick="commitMe()">작성하기</button>
+    
+    <table border="1" cellspacing="1" cellpadding="20">
+        <thead>
+            <th>순서</th>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>작성일</th>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        const commitMe = () => {
+            let who = document.querySelector('#writer').value;
+            let cnt = document.querySelector('#content').value;
+            let tbody = document.querySelector('tbody');
+            let date = new Date();
+
+            let year = date.getFullYear();
+            let month = date.getMonth() + 1;
+            let day = date.getDate();
+            let hours = date.getHours();
+            let mins = date.getMinutes();
+
+            let newtr = document.createElement('tr');
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+            let td3 = document.createElement('td');
+            let td4 = document.createElement('td');
+
+            tbody.append(newtr);
+            newtr.append(td1);
+            newtr.append(td2);
+            newtr.append(td3);
+            newtr.append(td4);
+
+            td1.textContent = tbody.children.length;
+            td2.textContent = who
+            td3.textContent = cnt
+            td4.textContent = `${year}-${month}-${day} ${hours}:${mins}`
+        }
+    </script>
+</body>
+</html>

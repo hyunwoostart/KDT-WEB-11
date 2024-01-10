@@ -70,7 +70,7 @@ if(age >= 20) {
     if(gender === "남자") {
         console.log('남자 고등학생');
     } else {
-        console.log('여자 고등학생')
+        console.log('여자 고등학생');
     }
 } else if(age >= 14) {
     if(gender === "남자") {
@@ -82,13 +82,13 @@ if(age >= 20) {
     if(gender === "남자") {
         console.log('남자 초등학생');
     } else {
-        console.log('여자 초등학생')
+        console.log('여자 초등학생');
     }
 } else {
     if(gender === "남자") {
         console.log('남자 유아');
     } else {
-        console.log('여자 유아')
+        console.log('여자 유아');
     }
 }
 */
@@ -184,8 +184,8 @@ console.log(sum1, sum2, sum3);
 console.log(array);
 
 // 실습2
-// let fruits1 = ["사과", "딸기", "파인애플", "수박", "참외", "오렌지", "자두", "망고"];
-// let fruits2 = ["수박", "사과", "참외", "오렌지","파인애플", "망고"];
+let fruits1 = ["사과", "딸기", "파인애플", "수박", "참외", "오렌지", "자두", "망고"];
+let fruits2 = ["수박", "사과", "참외", "오렌지","파인애플", "망고"];
 
 // 방법1
 /*
