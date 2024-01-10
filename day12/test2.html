@@ -35,32 +35,30 @@
         let btn_3 = document.querySelector('#btn_3');
         let btn_4 = document.querySelector('#btn_4');
         let cnt = document.querySelector('.img_wrap p');
+        let imgEl = document.querySelector('img');
+
+        const changeImg = (src, altText) => {
+            imgEl.setAttribute('src', src);
+            imgEl.setAttribute('alt', altText);
+            cnt.parentNode.removeChild(cnt);
+        }
 
         btn_1.addEventListener('click', () => {
-            document.querySelector('img').setAttribute('src', './img/01_apple.jpeg');
-            document.querySelector('img').setAttribute('alt', '사과');
-
-            cnt.parentNode.removeChild(cnt);
-        })
+            changeImg('./img/01_apple.jpeg', '사과');
+        });
 
         btn_2.addEventListener('click', () => {
-            document.querySelector('img').setAttribute('src', './img/02_banana.jpeg');
-            document.querySelector('img').setAttribute('alt', '바나나');
+            changeImg('./img/02_banana.jpeg', '바나나');
+        });
 
-            cnt.parentNode.removeChild(cnt);
-        })
         btn_3.addEventListener('click', () => {
-            document.querySelector('img').setAttribute('src', './img/03_grape.jpeg');
-            document.querySelector('img').setAttribute('alt', '포도');
+            changeImg('./img/03_grape.jpeg', '포도');
+        });
 
-            cnt.parentNode.removeChild(cnt);
-        })
         btn_4.addEventListener('click', () => {
-            document.querySelector('img').setAttribute('src', './img/04_peach.jpeg');
-            document.querySelector('img').setAttribute('alt', '복숭아');
+            changeImg('./img/04_peach.jpeg', '복숭아');
+        });
 
-            cnt.parentNode.removeChild(cnt);
-        })
     </script>
 </body>
 </html>
