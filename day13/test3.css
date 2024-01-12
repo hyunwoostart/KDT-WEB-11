@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+header {position: relative; display: flex; align-items: center; height: 100px; background-color: #add8e6;}
+h1 {position: absolute; left: 120px; font-size: 0;}
+h1 a {display: block; width: 100%;}
+h1 a img {width: 60px;}
+ul {display: flex; justify-content: center; width: 100%;}
+ul li {margin-right: 8px; font-weight: bold;} 
+ul li a {text-decoration: none; color: inherit;}
+
+@media screen and (max-width: 768px) {
+    header {flex-direction: column; height: 60px;}
+	h1 {position: relative; left: 0;}
+    ul {flex-direction: column; align-items: center; background-color: #f1f8ff;}
+    ul li {margin: 8px 0; font-weight: normal;}
+}
