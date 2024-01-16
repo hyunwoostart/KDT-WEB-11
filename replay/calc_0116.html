@@ -12,8 +12,8 @@
     <h3>계산기</h3>
     <label for="">값1: <input type="number" id="num1"></label>
     <label for="">값2: <input type="number" id="num2"></label>
-    <label for="">연산자: <input type="text" id="operate"></label>
-    <label for="">결과: <input type="text" id="result"></label>
+    <label for="">연산자<input type="text" id="operate"></label>
+    <label for="">결과<input type="text" id="result"></label>
     <button onclick="calc()">계산하기</button>
     <button onclick="reset()">초기화</button>
 
@@ -34,11 +34,10 @@
             } else if (operate == '/') {
                 nums = num1 / num2;
             } else {
-                nums = '모르겟어요';
+                nums = '모르겠어요'
             }
             result.value = nums;
         }
-
         const reset = () => {
             document.querySelector('#num1').value = '';
             document.querySelector('#num2').value = '';
