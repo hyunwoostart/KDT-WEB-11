@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input {display: block;}
+        table, tbody, tr, th, td {border-collapse: collapse; border: 1px solid #000;}
+    </style>
 </head>
 <body>
     <h3>방명록</h3>
@@ -21,10 +25,10 @@
     </table>
     <script>
         const commitMe = () => {
-            let who =  document.querySelector('#writer').value;
-            let cnt =  document.querySelector('#content').value;
-            let tbody =  document.querySelector('tbody');
-            let date =  new Date();
+            let who = document.querySelector('#writer').value;
+            let cnt = document.querySelector('#content').value;
+            let tbody = document.querySelector('tbody');
+            let date = new Date();
 
             let newtr = document.createElement('tr');
             let td1 = document.createElement('td');
@@ -37,8 +41,8 @@
             td3.textContent = cnt;
             td4.textContent = `${date.getFullYear()}-${date.getMonth() +1}-${date.getDate()} : ${date.getHours()}:${date.getMinutes()}`;
 
-            tbody.append(newtr);
-            tbody.append(td1, td2, td3, td4);
+            tbody.appendChild(newtr);
+            newtr.append(td1, td2, td3, td4);
         }
     </script>
 </body>
