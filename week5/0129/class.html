@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class
+        class Cat {
+            // 생성자
+            // 클래스의 인스턴스 생성시 생성되는 것(선택)
+            constructor(name, age) {
+                // 속성
+                this.name = name;
+                this.age = age;
+            }
+            // 메소드
+            mew() {
+                console.log(this.name, '야옹');
+            }
+            eat() {
+                console.log('먹이를 먹습니다');
+            }
+        }
+
+        const cat1 = new Cat('나비', 1);
+        const cat2 = new Cat('냥이', 2);
+        const cat3 = new Cat('초코', 4);
+        cat1.mew();
+        cat1.eat();
+        cat2.mew();
+        cat3.mew();
+
+        // 상속
+        class House {
+            door() {
+                console.log('문을 열고 닫습니다');
+            }
+            window() {
+                console.log('창문을 열고 닫습니다');
+            }
+        }
+        const hou1 = new House()
+        hou1.door();
+        class Apartement extends House {
+            elevator() {
+                console.log('승강기를 타고 내립니다');
+            }
+        }
+        const apart = new Apartement()
+        apart.door();
+        apart.window();
+
+        //실습
+        class Shape {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+            getArea() {
+                return this.width * this.height;
+            }
+        }
+        let rec1 = new Shape(3, 4);
+        console.log(rec1.getArea());
+    </script>
+</body>
+</html>
