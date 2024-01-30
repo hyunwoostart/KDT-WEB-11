@@ -8,18 +8,76 @@
 <body>
     <script>
         // callback hell
-        setTimeout(() => {
-            document.body.style.backgroundColor = 'red';
-            setTimeout(() => {
-                document.body.style.backgroundColor = 'orange';
+        // setTimeout(() => {
+        //     document.body.style.backgroundColor = 'red';
+        //     setTimeout(() => {
+        //         document.body.style.backgroundColor = 'orange';
+        //         setTimeout(() => {
+        //             document.body.style.backgroundColor = 'yellow';
+        //             setTimeout(() => {
+        //                 document.body.style.backgroundColor = 'green';
+        //                 setTimeout(() => {
+        //                     document.body.style.backgroundColor = 'blue';
+        //                 }, 2000);
+        //             }, 2000);
+        //         }, 2000);
+        //     }, 2000);
+        // }, 2000);
+
+        function color1() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    document.body.style.backgroundColor = 'red';
+                    resolve();
+                }, 2000);
+            })
+        }
+
+        function color2() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    document.body.style.backgroundColor = 'orange';
+                    resolve();
+                }, 2000);
+            })
+        }
+
+        function color3() {
+            return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     document.body.style.backgroundColor = 'yellow';
-                    setTimeout(() => {
-                        document.body.style.backgroundColor = 'green';
-                    }, 2000);
+                    resolve();
                 }, 2000);
-            }, 2000);
-        }, 2000);
+            })
+        }
+
+        function color4() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    document.body.style.backgroundColor = 'green';
+                    resolve();
+                }, 2000);
+            })
+        }
+
+        function color5() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    document.body.style.backgroundColor = 'blue';
+                    resolve();
+                }, 2000);
+            })
+        }
+
+        let exec = async () => {
+            await color1()
+            await color2()
+            await color3()
+            await color4()
+            await color5()
+        }
+
+        exec();
     </script>
 </body>
 </html>

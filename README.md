@@ -31,3 +31,10 @@ const { 변수 } = 객체;
 - Fulfilled(이행): Promise가 Resolve된 상태 (성공)
 - Rejected(거부): Promise가 지켜지지 못한 상태 Reject 된 상태 (실패)
 - Settled: fulfilled 혹은 rejected로 결론이 난 상태
+
+### Promise는 두 가지 콜백 함수를 가짐
+resolve(value): 작업이 성공(fulfilled)한 경우, 그 결과를 value와 함께 호출
+reject(error): 에러 (rejected) 발생 시 에러 객체를 나타내는 error와 함께 호출
+
+#### resolve() -> then 메서드 실행
+#### reject() -> catch 메서드 실행
