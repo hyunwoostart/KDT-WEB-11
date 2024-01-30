@@ -7,14 +7,15 @@
 </head>
 <body>
     <script>
-        function changeBgColor(newColor, delay) {
+        let changeBgColor = (newColor, delay) => {
             return new Promise((resolve) => {
                 setTimeout(() => {
                     document.body.style.backgroundColor = newColor;
                     resolve();
                 }, delay);
             })
-        }
+        } 
+
 //         let exec = async () => {
 //             await changeBgColor('red')
 //             .then(() => {
@@ -35,14 +36,13 @@
 // }
 
 //         exec();
-
-        // async / await
-        async function exec() {
+        let exec = async () => {
             await changeBgColor('red', 1000)
             await changeBgColor('yellow', 1000)
             await changeBgColor('blue', 1000)
             await changeBgColor('purple', 1000)
         }
+
         exec()
 </script>
 </body>
