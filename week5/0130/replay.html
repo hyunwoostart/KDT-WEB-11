@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let colorBg = (newColor, delay) => {
+        //     return new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             document.body.style.backgroundColor = newColor;
+        //             resolve();
+        //         }, delay);
+                
+        //     })
+        // }
+
+        // colorBg('red', 1000)
+        // .then(() => {
+        //     return colorBg('blue', 500);
+        // })
+        // .then(() => {
+        //     return colorBg('black', 500);
+        // })
+        // .then(() => {
+        //     return colorBg('grey', 500);
+        // })
+
+        // let colorBg = (newBg, delay) => {
+        //     return new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             document.body.style.backgroundColor = newBg;
+        //             resolve();
+        //         }, delay);
+        //     })
+        // }
+
+        // colorBg("red", 1000)
+        // .then(() => {
+        //     return colorBg("blue", 500)
+        // })
+        // .then(() => {
+        //     return colorBg("coral", 500)
+        // })
+        // .then(() => {
+        //     return colorBg("pink", 500)
+        // })
+
+        // let bgColor = (newColor, delay) => {
+        //     return new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             document.body.style.backgroundColor = newColor;
+        //             resolve();
+        //         }, delay);
+        //     })
+        // }
+
+        // bgColor("red", 1000)
+        // .then(() => {
+        //     return bgColor('blue', 500)
+        // })
+        // .then(() => {
+        //     return bgColor('gray', 500)
+        // })
+        // .then(() => {
+        //     return bgColor('green', 500)
+        // })
+
+        // function call(name) {
+        //     return new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             console.log(name);
+        //             resolve(name);
+        //         }, 1000);
+        //     })
+        // }
+
+        // function back() {
+        //     return new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             console.log('back');
+        //             resolve('back');
+        //         }, 1000);
+        //     })
+        // }
+
+        // function hell() {
+        //     return new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             resolve('callback hell');
+        //         }, 1000);
+        //     })
+        // }
+
+        // call('kim')
+        // .then((res) => {
+        //     console.log(`${res} 반가워`);
+        //     return back();
+        // })
+        // .then((res1) => {
+        //     console.log(`back을 실행했구나`);
+        //     return hell();
+        // })
+        // .then((res2) => {
+        //     console.log(`여기는 ${res2}`);
+        // })
+
+        // let exec = async () => {
+        //     let name = await call('kim');
+        //     console.log(`${name} 반가워`);
+        //     let res = await back();
+        //     console.log(`${res}을 실행했구나`);
+        //     let result = await hell();
+        //     console.log(`여기는 ${result}`);
+        // }
+
+        // exec();
+
+        let call = (name) => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log(name);
+                    resolve(name);
+                }, 1000);
+            })
+        }
+
+        let back = () => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log('back');
+                    resolve('back');
+                }, 1000);
+            })
+        }
+
+        let hell = () => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve('callback hell');
+                }, 1000);
+            })
+        }
+
+        call('ji')
+        .then((resolve) => {
+            console.log(`${resolve} 반가워`);
+            return back();
+        })
+        .then((resolve1) => {
+            console.log(`${resolve1}을 실행햇구나`);
+            return hell();
+        })
+        .then((resolve2) => {
+            console.log(`여기는 ${resolve2}`);
+        })
+
+    </script>
+</body>
+</html>
