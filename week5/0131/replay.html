@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            비동기 처리란? 
+            특정코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성
+            왜 비동기 처리일까?
+            서버로 데이터를 요청 시 , 서버거 언제 그 요청에 대한 응답을 줄지도 모르는데 마냥 다른 코드를 실행 안하고 기다릴 순 없음!
+            비동기 처리가 아니고 동기 처리라면 코드 실행하고 기다리고, 실행하고 기다려야한다.
+        */
+
+        /* 
+            콜백함수
+            Javascript는 함수를 인자로 받고 다른 함수를 통해 반환될 수 있는데, 인자로 대입되는 함수를 콜백함수라고 한다.
+            즉, 다른 함수가 실행을 끝낸 뒤 실행되는 함수
+            함수를 선언할 때는 parameter(인자, 매개변수)로 함수를 받아서 쓸 수 있다.
+        */
+
+        /* 
+            콜백함수를 왜 사용할까?
+            비동기 방식으로 작성된 함수를 동기 처리하기 위하여
+            독립적으로 수행되는 작업도 있는 반면 응답을 받은 이후 처리되어야 하는 종속적인 작업도 있을 수 있으므로 그에 대한 대응 방법이 필요
+        */
+
+        /*
+            비동기 함수를 동기 처리하기 위해 만들어진 객체
+            성공과 실패를 분리하여 반환
+            비동기 작업이 완료된 이후에 다음 작업을 연결시켜 진행할 수 있는 기능을 가짐
+        */
+
+        /*
+            Promise의 상태
+            Pending(대기) : Proise를 수행 중인 상태
+            Fulfilled(이행): Promise가 Resolve된 상태 (성공)
+            Rejected(거부): Promise가 지켜지지 못한 상태. Reject 된 상태 (실패)
+            Settled: fulfilled 혹은 rejected 결론이 난 상태
+        */
+
+        /* 
+        Promise 사용법
+        Promise 객체를 반환하는 Promise1 함수 정의
+        */
+        function promise1(flag) {
+            return new Promise(function (resolve, reject) {
+                if(flag) {
+                    resolve('promise 상태는 fulfilled!!! then으로 연결됩니다. \n 이때의 flag가 true입니다.');
+                } else {
+                    reject('promise 상태는 rejected!!! catch로 연결됩니다. \n 이때의 flag는 false입니다.');
+                }
+            });
+        }
+        /*
+        Promise는 두 가지 콜백 함수를 가짐
+        resolve(value): 작업이 성공(fulfilled) 한 경우, 그 결과를 value와 함께 호출
+        reject(error): 에러(rejected) 발생 시 에러 객체를 나타나는 error와 함께 호출
+        */
+        
+        /*
+        promise1(true) // 함수 호출 성공
+        .then(function (result) {
+            console.log(result);
+        })
+        .catch(function (err) {
+            console.log(err);
+        })
+
+        promise1(false) // 함수 호출 실패
+        .then(function (result) {
+            console.log(result);
+        })
+        .catch(function (err) {
+            console.log(err);
+        })
+
+        function add(n1, n2) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    let result = n1 + n2;
+                    resolve(result);
+                }, 1000);
+            });
+        }
+
+        function mul(n) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    let result = n * 2;
+                    resolve(result);
+                }, 700);
+            })
+        }
+
+        function sub(n) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    let result = n - 1;
+                    resolve(result);
+                }, 500);
+            })
+        }
+
+        add(4,3)
+        .then(function result() {
+            console.log('1: ', result);
+            return mul(result);
+        })
+        .then(function (result) {
+            console.log('2: ', result);
+            return sub(result);
+        })
+        .then(function (result) {
+            console.log('3: ', result);
+        });
+
+        */
+
+        function call(name, cb) {
+            setTimeout(() => {
+                console.log(name);
+                cb(name);
+            }, 1000);
+        }
+
+        function back(cb) {
+            setTimeout(() => {
+                console.log('back');
+                cb('back');
+            }, 1000);
+        }
+
+        function hell(cb) {
+            setTimeout(() => {
+                cb('callback hell');
+            }, 1000);
+        }
+
+        call('kim', function (name) {
+            console.log(name + '반가워');
+            back(function (txt) {
+                console.log(txt + '을 실행 했구나');
+                hell(function (message) {
+                    console.log('여기는 ' + message);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
