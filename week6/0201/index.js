@@ -68,6 +68,26 @@ app.use("*", (req, res) => {
     res.render('404');
 })
 
+//axios
+app.get('/axios', (req, res) => {
+    console.log('요청값', req.query);
+    res.send(req.query);
+});
+
+app.get('/axios', (req, res) => {
+    console.log('요청값', req.query);
+    res.send(req.query);
+});
+app.post('/axios', (req, res) => {
+    console.log('요청값', req.body);
+    const { username, email } = req.body;
+    const data = {
+        name: `안녕하세요 ${username}님`,
+        address: `주소는 ${email}입니다`,
+    };
+    res.send(data);
+})
+
 // 서버 실행
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
