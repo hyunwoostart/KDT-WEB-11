@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>실습 파일 업로드</h1>
+    <form id="register-form" name="register-form">
+        <input type="text" id="userid" placeholder="아이디" /><br />
+        <input type="password" id="pw" placeholder="비밀번호" /><br />
+        <input type="text" id="username" placeholder="이름" /><br />
+        <input type="number" id="age" placeholder="나이" /><br />
+        <input type="file" id="userfile" /><br />
+        <!-- <button type="submit" onclick="fileUpload()">업로드</button> -->
+        <br>
+        <button type="button" onclick="getRegister()">회원가입</button>
+    </form>
+    <br />
+    <br />
+    <div class="resultBox"></div>
+    <script>
+        const resultBox = document.querySelector('.resultBox');
+        function fileUpload() {
+            const file = document.querySelector('#userfile');
+            // 파일에 접근하기 위해서 file.files를 사용하고
+            // file.files는 배열을 반환하며 우리가 원하는 것은
+            // 첫번째 요소이기 때문에 file.files
+            console.log(file.files[0]);
+
+            // FormData: 자바스크립트 내장객체이고 폼 데이터를 생성해 줌
+            const formData = new FormData();
+            //append(key, value);
+            //파일들은 항상 제일 마지막에 선언
+            formData.append('title', document.querySelector('#title').value);
+            formData.append('file', file.files[0]);
+
+            axios({
+                method: 'POST',
+                url: '/upload/axios',
+                data: formData,
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            }).then(res => {
+                console.log('res', res);
+                resultBox.innerHTML = `<p>이름은 ${res.data.title.title}</p><img src='${res.data.file.path}'>`;
+            });
+        }
+        function getRegister() {
+                const form = document.forms['register-form'];
+
+                // 백엔드로 보낼 요청 데이터
+                const data = {
+                    username: form.username.value,
+                };
+                console.log(data);
+                axios({
+                    method: 'GET',
+                    url: '/resultGet',
+                    params: data,
+                }).then(res => {
+                    console.log('res', res);
+                    const { username } = res.data.response;
+                    resultBox.textContent = `${username} 님 환영합니다`;
+                })
+            }
+    </script>
+</body>
+</html>
