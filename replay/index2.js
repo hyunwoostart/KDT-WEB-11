@@ -5,7 +5,7 @@ const app = express();
 const PORT = 8000;
 
 app.set('view engine', 'ejs');
-app.use('/uploads', express.static(__dirname + '/uploads'));
+app.use('/uploads', express.static(__dirnmae + '/uploads'));
 
 const upload = multer({
     storage: multer.diskStorage({
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 app.post('/upload', upload.single('userfile'), (req, res) => {
     const { userid, userpw, username, userage } = req.body;
     const img = req.file.path;
-    res.render('result', { userid, userpw, username, userage, img });
+    res.render('result', { userid, userpw, username, userage, img});
 });
 
 app.listen(PORT, () => {
