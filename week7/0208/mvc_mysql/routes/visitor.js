@@ -13,7 +13,7 @@ router.get('/:id', controller.getVisitor);
 router.post('/write', controller.postVisitor);
 //PATCH /update 방명록 하나 수정
 router.patch('/update', controller.patchVisitor);
-// //DELETE /delete 방명록 하나 삭제
+//DELETE /delete 방명록 하나 삭제
 router.delete('/delete', controller.deleteVisitor);
 
 module.exports = router;
