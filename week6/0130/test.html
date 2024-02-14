@@ -188,30 +188,28 @@
         //     return changeBgColor('coral', 2000);
         // })
 
-        let colorbg = (newBg, delay) => {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    document.body.style.backgroundColor = newBg;
-                    resolve();
-                }, delay);
-            })
-        }
+        // let colorbg = (newBg, delay) => {
+        //     return new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             document.body.style.backgroundColor = newBg;
+        //             resolve();
+        //         }, delay);
+        //     })
+        // }
 
-        colorbg('red', 1000)
-        .then(() => {
-            return colorbg('orange', 500)
-        })
-        .then(() => {
-            return colorbg('blue', 500)
-        })
-        .then(() => {
-            return colorbg('black', 500)
-        })
-        .then(() => {
-            return colorbg('lightblue', 500)
-        })
-
-
+        // colorbg('red', 1000)
+        // .then(() => {
+        //     return colorbg('orange', 500)
+        // })
+        // .then(() => {
+        //     return colorbg('blue', 500)
+        // })
+        // .then(() => {
+        //     return colorbg('black', 500)
+        // })
+        // .then(() => {
+        //     return colorbg('lightblue', 500)
+        // })
 
 
 
@@ -223,7 +221,9 @@
 
 
 
-        /*
+
+
+        
         function call(name) {
             return new Promise((resolve) => {
                 setTimeout(() => {
@@ -260,7 +260,7 @@
         .then((res2) => {
             console.log(`여기는 ${res2}`);
         });
-        */
+        
 
         // let exec = async () => {
         //     let name = await call('kim');

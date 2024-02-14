@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="title" placeholder="제목"><br>
+    <textarea id="content" cols="30" rows="10" placeholder="내용"></textarea><br>
+    <button type="button" onclick="writeFunc()">등록</button>
+
+    <script>
+        async function writeFunc() {
+            const res = await axios({
+                method: 'POST',
+                url: '/api/post/write',
+                data: {
+                    title: document.querySelector('#title').value,
+                    content: document.querySelector('#content').value
+                },
+            });
+            if(res.data.result) {
+                alert('등록되었습니다');
+                document.location.href = `/post/${res.data.data.id}`;
+            }
+        }
+    </script>
+</body>
+</html>
