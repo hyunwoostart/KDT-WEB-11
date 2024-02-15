@@ -14,4 +14,16 @@ const write = (req, res) => {
     res.render('write'); //글쓰기페이지
 };
 
-module.exports = { main, post, detail, write };
+const signup = (req, res) => {
+    res.render('signup'); //회원가입페이지
+};
+
+const login = (req, res) => {
+    res.render('login');
+};
+
+const profile = (req, res) => {
+    res.render('profile');
+};
+
+module.exports = { main, post, detail, write, signup, login, profile };
