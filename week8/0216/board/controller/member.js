@@ -1,4 +1,5 @@
 const { Member, Profile } = require('../models');
+const SAVEID = 'saveId';
 
 //회원가입
 exports.signup = async (req, res) => {
@@ -20,15 +21,15 @@ exports.signup = async (req, res) => {
 };
 //로그인
 exports.login = async (req, res) => {
-    const { userId, pw } = req.body;
+    const { userId, pw, save } = req.body;
     //검색 findOne
     const result = await Member.findOne({ where: { userId, password: pw } });
     console.log('login', result);
     if (result) {
         req.session.member = result;
-        
-        if (save) {
-            res.cookie('SAVEID', result.id, { maxAge: 100000, httpOnly: true });
+
+        if (save === 'save') {
+            res.cookie(SAVEID, result.id, { maxAge: 100000, httpOnly: true });
         } else {
             res.clearCookie(SAVEID);
         }
@@ -69,12 +70,21 @@ exports.delete = async (req, res) => {
 };
 //로그아웃
 exports.logout = (req, res) => {
-    if(req.session.member) {
+    if (req.session.member) {
         //세션제거
         req.session.destroy(() => {
-            res.json({success:true})
-        })
+            res.clearCookie(SAVEID);
+            res.json({ success: true });
+        });
     } else {
-        res.json({success:false, message: '로그인상태가 아닙니다'})
+        res.json({ success: false, message: '로그인상태가 아닙니다' });
+    }
+};
+//쿠키 보내기
+exports.getCookie = (req, res) => {
+    if (req.cookies[SAVEID]) {
+        res.json({ isLoggedIn: true });
+    } else {
+        res.json({ isLoggedIn: false });
     }
 };

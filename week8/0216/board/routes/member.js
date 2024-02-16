@@ -13,7 +13,9 @@ router.get('/info', controller.find);
 router.patch('/update', controller.update);
 //DELETE /delete 회원탈퇴
 router.delete('/delete', controller.delete);
-//POST /logout 로그아웃(세션삭제)
+//GET /logout 로그아웃(세션삭제)
 router.get('/logout', controller.logout);
+//GET /getCookie 쿠키
+router.get('/getCookie', controller.getCookie);
 
 module.exports = router;

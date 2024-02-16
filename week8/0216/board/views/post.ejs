@@ -10,7 +10,7 @@
         <h1>kdt11기 게시판</h1>
         <a href="/write">글쓰기</a>
         <a href="/profile">내정보조회</a>
-        <a href="/logout">로그아웃</a>
+        <button type="button" onclick="logout()">로그아웃</button>
         <table border="1" cellspacing="0">
             <thead>
                 <tr>
@@ -51,8 +51,8 @@
             function logout() {
                 axios({
                     method: 'GET',
-                    url: '/api/member/logout'
-                }).then(res => {
+                    url: '/api/member/logout',
+                }).then((res) => {
                     console.log(res);
                     if (res.data.success) {
                         document.location.href = '/';
