@@ -1,18 +1,13 @@
-import {useState } from 'react'
+import React, { useState } from 'react'
 
 function Handler3() {
-    const [text, setText] = useState('안녕하세요')
-    const [sub, setSub] = useState('사라져라')
-
-    const changeText = () => {
-        setText('')
-        setSub('보여라')
-    }
-
+    const [display, setDisplay] = useState(true);
   return (
     <div>
-        <h2>{text}</h2>
-        <button onClick={changeText}>{sub}</button>
+        {/* true ->  false, false -> true */}
+        <button onClick={() => setDisplay(!display)}>{display ? '사라져라' : '보여라'}</button>
+        {/* display가 true 일 때만 화면에 나오게 */}
+        {display && <h4>안녕하세요</h4>}
     </div>
   )
 }

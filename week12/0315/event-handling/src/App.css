@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+
+input {
+  display: block;
+}
+
+
+.prd_wrap {
+  width: 500px;
+
+  img {
+    display: block;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.prd_wrap p {
+  padding: 15px;
+}
