@@ -1,0 +1,65 @@
+@import './_variableEx.scss';
+@import './_utilsEx.scss';
+
+.larva {
+    position: relative;
+
+    .body {
+        // 믹스인 호출
+        @include body(100px);
+
+        border-radius: 50%;
+        position: absolute;
+
+        &.body1 {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            background-color: $color-bg1;
+
+            .eye {
+                position: absolute;
+                @include body(50px);
+                border-radius: 50%;
+
+                &.eye-white {
+                    background-color: $color-bg6;
+                }
+
+                &.eye-black {
+                    @include body(25px);
+                    top: 0;
+                    left: 20px;
+                    background-color: $color-bg7;
+                }
+            }
+        }
+        &.body2 {
+            top: 150px;
+            left: 160px;
+            background-color: $color-bg2;
+        }
+        &.body3 {
+            top: 190px;
+            left: 200px;
+            background-color: $color-bg3;
+        }
+        &.body4 {
+            top: 240px;
+            left: 220px;
+            background-color: $color-bg4;
+        }
+        &.body5 {
+            top: 280px;
+            left: 280px;
+            background-color: $color-bg5;
+            z-index: 10;
+        }
+    }
+}
+
+.larva .grass {
+    position: absolute;
+    top: 260px;
+    left: 0;
+}

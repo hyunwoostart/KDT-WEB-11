@@ -1,0 +1,37 @@
+// - 믹스인(함수) 선언(정의)
+@mixin circle($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin ani($ani) {
+    left: $ani;
+    animation: watch 6s infinite;
+
+    @keyframes watch {
+        0% {
+            top: 0;
+            left: 0;
+        }
+
+        25% {
+            top: 0;
+            left: $ani;
+        }
+
+        50% {
+            top: $ani;
+            left: $ani;
+        }
+
+        75% {
+            top: $ani;
+            left: 0;
+        }
+
+        100% {
+            top: 0;
+            left: 0;
+        }
+    }
+}
