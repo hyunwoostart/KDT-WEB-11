@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+import MainPage from './pages/MainPage';
+import ProductPage from './pages/ProductPage';
+import NotFound from './pages/NotFound';
+import ProductDetailPage from './pages/ProductDetailPage';
+import Header from './components/Header';
+import StudentHeader from './components/StudentHeader';
+import StudentDetail from './components/StudentDetail';
 
 function App() {
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    const res = await axios.get(
+      'https://jsonplaceholder.typicode.com/comments'
+    );
+    setProducts(res.data.slice(0, 10));
+    console.log('products', res.data.slice(0, 10));
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route
+            path="/products"
+            element={<ProductPage products={products} />}
+          />
+          <Route
+            path="/products/:productId"
+            element={<ProductDetailPage products={products} />}
+          />
+          {/* 실습 */}
+          <Route path="/student" element={<StudentHeader />} />
+          <Route path="/student/:name" element={<StudentDetail />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
