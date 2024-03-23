@@ -5,7 +5,6 @@ import { minus, plus } from './store/counterReducer';
 export default function App2() {
   // store에 있는 상태 가져오기
   const number = useSelector((state) => state.counter.number);
-  const isVisible = useSelector()
   return (
     <div>
       <h1>React Redux Ex</h1>

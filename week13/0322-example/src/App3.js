@@ -1,15 +1,14 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { minus, plus } from './store/counterReducer';
 
 export default function App3() {
   // store에 있는 상태 가져오기
   // const number = useSelector((state) => state.counter.number);
-  const isVisible = useSelector()
+  const isVisible = useSelector((state) => state.isVisible);
   return (
     <div>
       <h1>React Redux Ex</h1>
-      <h2>number: {number}</h2>
+      <h2>isVisible 값은 "{isVisible ? '참' : '거짓'}" 이다.</h2>
       <Box1 />
     </div>
   );
@@ -44,8 +43,10 @@ const Box4 = () => {
   return (
     <div className="Box">
       <h2>Box4</h2>
-      <button onClick={() => dispatch(plus())}>PLUS</button>
-      <button onClick={() => dispatch(minus())}>MINUS</button>
+      {/* <button onClick={() => dispatch(plus())}>PLUS</button>
+      <button onClick={() => dispatch(minus())}>MINUS</button> */}
+      {/* 퀴즈. CHANGE 버튼을 클릭하면 '참', '거짓' 글자가 토글 */}
+      <button onClick={() => dispatch({ type: 'CHANGE' })}>CHANGE</button>
     </div>
   );
 };
