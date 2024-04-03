@@ -5,12 +5,12 @@ const fruits = [
     { name: '🍋', price: 1000 },
 ];
 
-
-const doesExist = fruits.some((fruit) => {
-    if(fruit.price > 600) {
-        return true
-    }
-    return false
+const cheapFruits = fruits.filter((fruit) => {
+   if(fruit.price <= 500) {
+    return true
+   }
+   return false
 })
 
-console.log(doesExist);
+console.log(fruits);
+console.log(cheapFruits);
