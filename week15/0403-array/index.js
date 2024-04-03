@@ -5,12 +5,10 @@ const fruits = [
     { name: '🍋', price: 1000 },
 ];
 
-const cheapFruits = fruits.filter((fruit) => {
-   if(fruit.price <= 500) {
-    return true
-   }
-   return false
+const priceTags = fruits.map((fruit) => {
+    return `${fruit.name}: ${fruit.price}원`;
 })
 
-console.log(fruits);
-console.log(cheapFruits);
+console.log(fruits)
+console.log(priceTags);
+
